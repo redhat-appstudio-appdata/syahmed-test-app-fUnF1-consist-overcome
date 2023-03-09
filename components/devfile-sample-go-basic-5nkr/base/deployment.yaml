@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: devfile-sample-go-basic-5nkr
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: devfile-sample-go-basic-5nkr
+    app.kubernetes.io/part-of: syahmed-test-app
+  name: devfile-sample-go-basic-5nkr
+  namespace: syahmed-tenant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-app
+      app.kubernetes.io/instance: devfile-sample-go-basic-5nkr
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: go-app
+        app.kubernetes.io/instance: devfile-sample-go-basic-5nkr
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload:fUnF1-devfile-sample-go-basic-5nkr
+        name: my-go
+        ports:
+        - containerPort: 8081
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 10m
+            memory: 10Mi
+status: {}
