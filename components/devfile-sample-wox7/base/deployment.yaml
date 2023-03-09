@@ -25,7 +25,7 @@ spec:
         app.kubernetes.io/instance: devfile-sample-wox7
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:fUnF1-devfile-sample-wox7
+      - image: quay.io/redhat-appstudio/user-workload@sha256:e53a310a37c5b208c764a04341d046e39d2cd63b64df1dd6a95921e1f437abce
         name: my-nodejs
         ports:
         - containerPort: 3001
